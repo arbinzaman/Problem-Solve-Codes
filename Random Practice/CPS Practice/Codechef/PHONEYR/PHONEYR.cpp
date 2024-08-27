@@ -12,4 +12,5 @@ int main()
     cout<< y / 10;
     cout << y % 10 ;
     cout<<endl;
+    
 }
