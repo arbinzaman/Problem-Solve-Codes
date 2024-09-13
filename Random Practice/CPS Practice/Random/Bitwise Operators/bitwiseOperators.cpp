@@ -52,6 +52,20 @@ For example:
     1010
     ----
     0111
+
+    ----------------
+
+    x ^ y = z
+    0 ^ 1 = 1
+
+    x ^ z = y
+    0 ^ 1 = 1
+
+  summery: 
+    x ^ y = result
+    x ^ result = y
+
+
     */
 
     cout << "bitwiseAND = " << bitwiseAND << endl;
