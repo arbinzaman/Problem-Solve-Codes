@@ -9,7 +9,7 @@ cout<<result <<endl;
    int resultXOR = result ^ (1<<2);
     cout<<resultXOR;
     return 0;
-
+    
     /**
      * TODO https://www.codechef.com/practice/course/bit-manipulation/BITMF/problems/BITMEDU2
      *? First Task?
