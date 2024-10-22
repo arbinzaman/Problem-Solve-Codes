@@ -15,7 +15,7 @@ else if (n < 100000){
 }
 else if (n < 1000000){
     cout << (n/1000)*1000 << endl;
-}
+} 
 else if (n < 10000000){
     cout << (n/10000)*10000 << endl;
 }
