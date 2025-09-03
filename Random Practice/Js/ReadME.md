@@ -44,11 +44,11 @@ Run the JavaScript file using Node.js:
 
 ## 📚 Resources
 
-# Read Eloquent JavaScript Online
+#### Read Eloquent JavaScript Online
 
-# Eloquent JavaScript GitHub Repository
+#### Eloquent JavaScript GitHub Repository
 
-# Solutions to Eloquent JavaScript Exercises
+#### Solutions to Eloquent JavaScript Exercises
 
 ## 📌 Note
 
