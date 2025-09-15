@@ -21,8 +21,8 @@ function shortedList(value, list) {
 	return list
 }
 
-list = shortedList(25, list)
 list = shortedList(5, list)
+list = shortedList(25, list)
 list = shortedList(80, list)
 
 console.log(JSON.stringify(list))

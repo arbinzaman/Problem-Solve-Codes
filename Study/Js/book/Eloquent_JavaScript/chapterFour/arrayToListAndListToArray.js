@@ -20,7 +20,7 @@ function arrayToList(arr) {
 	for (let i = arr.length - 1; i >= 0; i--) {
 		// Create a new node with current value and point "next" to current list
 		list = {value: arr[i], next: list}
-	}
+	}let arr = [10, 20, 30] // Example array
 
 	// Return the head of the linked list
 	return list
