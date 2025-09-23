@@ -62,7 +62,7 @@ Storage: ${obj.Storage}
         `;
 }
 
-function showValue() {
+function showValue3() {
   const input = document.getElementById("input").value;
   const output = document.getElementById("output");
   console.log(input);
@@ -81,13 +81,9 @@ function showValue() {
 
   const obj = {
     Brand: parts[0] || "",
-    Processor:
-      processorIndex 
-        ? parts.slice(processorIndex +1, ramIndex)
-        : "",
-    Ram:
-      ramIndex  ? parts.slice(ramIndex + 1, storageIndex) : "",
-    Storage: storageIndex  ? parts.slice(storageIndex + 1) : "",
+    Processor: processorIndex ? parts.slice(processorIndex + 1, ramIndex) : "",
+    Ram: ramIndex ? parts.slice(ramIndex + 1, storageIndex) : "",
+    Storage: storageIndex ? parts.slice(storageIndex + 1) : "",
   };
 
   output.textContent = `
@@ -96,4 +92,36 @@ Processor: ${obj.Processor}
 Ram: ${obj.Ram}
 Storage: ${obj.Storage}
         `;
+}
+
+function showValue() {
+  const input = document.getElementById("input").value;
+  console.log(input);
+  const output = document.getElementById("output");
+
+  const parts = input.split(" "); 
+  console.log(parts);
+  const obj = {}; 
+
+  for (let i = 0; i < parts.length; i++) {
+    if (parts[i].toLowerCase() === "processor") {
+      obj.Processor = parts[i + 1];
+      i++;
+    } else if (parts[i].toLowerCase() === "ram") {
+      obj.Ram = parts[i + 1];
+      i++;
+    } else if (parts[i].toLowerCase() === "storage") {
+      obj.Storage = parts[i + 1];
+      i++;
+    } else if (!obj.Brand) {
+      obj.Brand = parts[i];
+    }
+  }
+
+  output.textContent = `
+Brand: ${obj.Brand || ""}
+Processor: ${obj.Processor || ""}
+Ram: ${obj.Ram || ""}
+Storage: ${obj.Storage || ""}
+  `;
 }
