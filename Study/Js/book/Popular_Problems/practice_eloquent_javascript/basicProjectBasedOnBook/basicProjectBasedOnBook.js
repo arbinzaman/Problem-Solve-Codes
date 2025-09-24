@@ -3,10 +3,10 @@ function showValue() {
   const output = document.getElementById("output");
 
   const parts = input.split(" ");
-  console.log("parts",parts);
+  console.log("parts", parts);
 
   const lowerParts = parts.map((p) => p.toLowerCase());
-  console.log("to lower case",lowerParts);
+  console.log("to lower case", lowerParts);
 
   const processorIndex = lowerParts.indexOf("processor");
   console.log(processorIndex);
@@ -28,32 +28,31 @@ function showValue() {
   function collectWords(startIndex, nextKeywords) {
     let result = [];
     for (let i = startIndex + 1; i < parts.length; i++) {
-      if (nextKeywords.includes(lowerParts[i])) break; 
+      if (nextKeywords.includes(lowerParts[i])) break;
       result.push(parts[i]);
 
-      console.log("parts from loop",parts[i]);
-      
+      console.log("parts from loop", parts[i]);
     }
-    console.log("Start Index",startIndex);
-    console.log("Next Keyword",nextKeywords);
+    console.log("Start Index", startIndex);
+    console.log("Next Keyword", nextKeywords);
     console.log(result);
 
     return result.join(" ");
   }
 
-  if (processorIndex ) {
+  if (processorIndex) {
     obj.Processor = collectWords(processorIndex, ["ram", "storage"]);
   }
 
-  if (ramIndex ) {
+  if (ramIndex) {
     obj.Ram = collectWords(ramIndex, ["processor", "storage"]);
   }
 
-  if (storageIndex ) {
+  if (storageIndex) {
     obj.Storage = collectWords(storageIndex, ["processor", "ram"]);
   }
 
-  output.textContent = `
+  output.innerHTML = `
 Brand: ${obj.Brand}
 Processor: ${obj.Processor}
 Ram: ${obj.Ram}
