@@ -8,6 +8,9 @@ function showValue() {
   const lowerParts = parts.map((p) => p.toLowerCase());
   console.log("to lower case", lowerParts);
 
+  const BrandIndex = lowerParts.indexOf("brand")
+  console.log("brand",BrandIndex);
+
   const processorIndex = lowerParts.indexOf("processor");
   console.log(processorIndex);
 
@@ -18,7 +21,7 @@ function showValue() {
   console.log(storageIndex);
 
   const obj = {
-    Brand: parts[0] || "",
+    Brand:  "",
     Processor: "",
     Ram: "",
     Storage: "",
@@ -28,6 +31,7 @@ function showValue() {
   function collectWords(startIndex, nextKeywords) {
     let result = [];
     for (let i = startIndex + 1; i < parts.length; i++) {
+      console.log(i);
       if (nextKeywords.includes(lowerParts[i])) break;
       result.push(parts[i]);
 
@@ -39,10 +43,14 @@ function showValue() {
 
     return result.join(" ");
   }
+if (BrandIndex){
+  obj.Brand = collectWords(BrandIndex, ["processor" , "ram", "storage"]);
+}
 
   if (processorIndex) {
     obj.Processor = collectWords(processorIndex, ["ram", "storage"]);
   }
+
 
   if (ramIndex) {
     obj.Ram = collectWords(ramIndex, ["processor", "storage"]);
